@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace Symphonix
+namespace Symphonica
 {
     internal class Program
     {
