@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace Symphonica
 {
-    public partial class UserControl1 : UserControl
+    public partial class HomePage : UserControl
     {
-        public UserControl1()
+        public HomePage()
         {
             InitializeComponent();
         }

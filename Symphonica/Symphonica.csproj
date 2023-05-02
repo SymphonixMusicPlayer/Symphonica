@@ -5,9 +5,20 @@
     <Nullable>enable</Nullable>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn></NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn></NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <None Remove=".gitignore" />
+    <None Remove="Assets\play-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\play-button.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,16 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.18" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.18" />
+    <PackageReference Include="Avalonia" Version="0.10.19" />
+    <PackageReference Include="Avalonia.Angle.Windows.Natives" Version="2.1.0.2023020321" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.19" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.18" />
-    <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="MainUserControl.axaml.cs">
-      <DependentUpon>MainUserControl.axaml</DependentUpon>
-    </Compile>
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.19" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.19" />
+    <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
   </ItemGroup>
 </Project>

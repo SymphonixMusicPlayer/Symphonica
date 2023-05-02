@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Symphonica.HomePage">
+
+  <StackPanel>
+    <TextBlock Text="Accueil" FontSize="20" Margin="10"/>
+
+    <!-- Lectures récentes -->
+    <TextBlock Text="Lectures récentes" Margin="10"/>
+    <ListBox>
+      <!-- Bind la liste des lectures récentes ici -->
+    </ListBox>
+
+    <!-- Nombre d'heures écoutées -->
+    <TextBlock Text="Nombre d'heures écoutées" Margin="10"/>
+    <TextBlock Text="{Binding HoursListened}" FontSize="10" FontWeight="Bold" Margin="10"/>
+
+    <!-- Titres les plus écoutés -->
+    <TextBlock Text="Titres les plus écoutés" Margin="10"/>
+    <ListBox>
+      <!-- Bind la liste des titres les plus écoutés ici -->
+    </ListBox>
+
+    <!-- Albums préférés -->
+    <TextBlock Text="Albums préférés" Margin="10"/>
+    <ListBox>
+      <!-- Bind la liste des albums préférés ici -->
+    </ListBox>
+
+    <!-- Artistes préférés -->
+    <TextBlock Text="Artistes préférés" Margin="10"/>
+    <ListBox>
+      <!-- Bind la liste des artistes préférés ici -->
+    </ListBox>
+
+    <!-- Mixes générés -->
+    <TextBlock Text="Vos mixes" Margin="10"/>
+    <ListBox>
+      <!-- Bind la liste des mixes générés ici -->
+    </ListBox>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,35 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+      <Border Padding="20">
+          <!-- Add Controls for Previewer Here -->
+      </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+  <Style Selector="Button.circular">
+    <Setter Property="Width" Value="30" />
+    <Setter Property="Height" Value="30" />
+    <Setter Property="Margin" Value="5" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="#CCCCCC" />
+    <Setter Property="Background" Value="#F0F0F0" />
+    <Setter Property="CornerRadius" Value="15" />
+  </Style>
+
+  <Style Selector="Button.circular">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Button.Background}" BorderBrush="{TemplateBinding Button.BorderBrush}"
+                  BorderThickness="{TemplateBinding Button.BorderThickness}" CornerRadius="{TemplateBinding Button.CornerRadius}">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  
+  <Image x:Name="PlayIcon" Source="avares://Symphonica/Assets/play-icon.png" Width="20" Height="20" />
+  <Image x:Name="AddIcon" Source="avares://Symphonica/Assets/add-icon.png" Width="20" Height="20" />
+</Styles>

@@ -3,32 +3,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
+        MinWidth="600" MinHeight="400"
         x:Class="Symphonica.MainWindow"
         Title="Symphonica">
-  
-  <!-- Left panel -->
-  <StackPanel Width="180"
-              ClipToBounds="True"
-              Margin="0"
-              Spacing="5"
-              Background="Gray"
-              HorizontalAlignment="Left">
-    
-    <!-- Left Menu Buttons and categories -->
-    <Button Content="Home" Click="ClickHome" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 5 0 5"/>
-  </StackPanel>
 
-  <!-- Player layout -->
-  <StackPanel>
-    <Button Name="PlayButton" HorizontalAlignment="Center" Width="36" Click="ClickPlayButton">
-      <Panel>
-        <!-- Show play icon -->
-        <Image Source="{DynamicResource Play}" IsVisible="{Binding !IsPlaying}" Width="20"
-               Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <!-- Show pause icon -->
-        <Image Source="{DynamicResource Play}" IsVisible="{Binding IsPlaying}" Width="20"
-               Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-      </Panel>
-    </Button>
-  </StackPanel>
+  <Grid>
+    <DockPanel>
+      <Grid Width="200" Background="#333333">
+        <ListBox SelectionChanged="OnSidePanelItemSelected">
+          <ListBoxItem x:Name="HomeListItem" Content="Accueil" VerticalAlignment="Top"/>
+          <ListBoxItem x:Name="LibraryListItem" Content="Librairie"/>
+          <ListBoxItem x:Name="PlaylistsListItem" Content="Playlists"/>
+          <ListBoxItem x:Name="PluginsListItem" Content="Plugins"/>
+          <ListBoxItem x:Name="SettingsListItem" Content="Paramètres" VerticalAlignment="Bottom"/>
+        </ListBox>
+      </Grid>
+      <ContentControl x:Name="ContentArea" Margin="10"/>
+    </DockPanel>
+  </Grid>
 </Window>

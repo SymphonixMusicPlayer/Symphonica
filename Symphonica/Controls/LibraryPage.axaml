@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Symphonica.Controls.LibraryPage">
+  <TabControl>
+    <!-- Onglet Morceaux -->
+    <TabItem Header="Morceaux">
+      <Grid>
+        <!-- Barre de recherche -->
+        <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="10">
+          <TextBox DockPanel.Dock="Left" Width="200" Margin="0,0,5,0" Watermark="Rechercher un morceau" />
+          <Button DockPanel.Dock="Left" Content="Rechercher" />
+        </DockPanel>
+
+        <!-- Liste des morceaux -->
+        <ListBox Margin="10">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Pochette de l'album -->
+                <Image Grid.Column="0" Width="80" Height="80" Source="{Binding AlbumArt}" />
+
+                <StackPanel Grid.Column="1" Orientation="Vertical">
+                  <!-- Nom du morceau -->
+                  <TextBlock Text="{Binding Title}" FontWeight="Bold" />
+
+                  <!-- Nom de l'artiste -->
+                  <TextBlock Text="{Binding Artist}" />
+
+                  <!-- Nom de l'album -->
+                  <TextBlock Text="{Binding Album}" />
+
+                  <!-- Autres informations -->
+                  <!-- ... -->
+                </StackPanel>
+              </Grid>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </Grid>
+    </TabItem>
+
+    <!-- Onglet Albums -->
+    <TabItem Header="Albums">
+      <ListBox>
+        <!-- Bind la liste des albums ici -->
+      </ListBox>
+    </TabItem>
+
+    <!-- Onglet Artistes -->
+    <TabItem Header="Artistes">
+      <ListBox>
+        <!-- Bind la liste des artistes ici -->
+      </ListBox>
+    </TabItem>
+  </TabControl>
+</UserControl>
